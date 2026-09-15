@@ -172,13 +172,16 @@
             <li>📄 PDFs + planillas de control mensual</li>
             <li>💬 Consultas 4 meses + certificado</li>
           </ul>
-          <a class="btn btn-cta btn-block" href="#precio" data-track="InitiateCheckout">Empezar ahora <span class="btn-ic" aria-hidden="true">→</span></a>
+          <a class="hero-card-link" href="#precio">Ver precio ↓</a>
           <p class="microcopy center">Garantía 7 días · Factura C</p>
           </div>
         </aside>
         <div class="float-card float-top" aria-hidden="true">
           <p class="float-stars">★★★★★</p>
-          <p><strong>4.9/5 · +300 contadores</strong> ya lo hicieron</p>
+          <div class="float-top-inner">
+            <img class="float-avatar" src="assets/meli-avatar.jpg" alt="" width="256" height="256">
+            <p><strong>4.9/5 · +300 contadores</strong> ya lo hicieron</p>
+          </div>
         </div>
         <div class="float-card float-bottom" aria-hidden="true">
           <div class="float-case">
@@ -227,6 +230,7 @@
           <label class="card pain reveal"><input type="checkbox"> <span><strong>💸 Ves retenciones de Mercado Pago</strong><br>y no sabés si están bien o son "de más".</span></label>
           <label class="card pain reveal"><input type="checkbox"> <span><strong>📉 No sabés cuánto cobrar</strong><br>por llevar un vendedor de ML todos los meses.</span></label>
         </div>
+        <p class="center reveal pain-cta-wrap"><a id="pain-cta" class="btn btn-yellow btn-lg pain-cta is-disabled" href="#programa" data-track="PainQualify" aria-disabled="true"><span class="pain-cta-label" aria-live="polite">Marcá las que te pasen 👆</span> <span class="btn-ic" aria-hidden="true">→</span></a></p>
         <p class="center reveal pain-result" id="painResult" aria-live="polite">Marcá las que te pasen 👆 y mirá el programa acá abajo.</p>
       </div>
     </section>
@@ -449,7 +453,11 @@
     <div class="divider" aria-hidden="true" style="--div-bg:#FFFFFF;--div-fill:#FFFFFF"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
     <section class="section section-white" id="bio">
       <div class="container bio-grid">
-        <div class="bio-photo reveal" role="img" aria-label="Foto de la Contadora Meli">👩‍💼</div>
+        <div class="bio-photo-frame reveal">
+          <div class="bezel">
+            <img src="assets/meli-retrato.jpg" alt="Andrea, Contadora Meli" loading="lazy" width="640" height="640">
+          </div>
+        </div>
         <div class="reveal">
           <h2 class="section-title left">Hola, soy Meli 👋</h2>
           <p><a href="https://www.instagram.com/contadora_meli/" target="_blank" rel="noopener">@contadora_meli</a></p>

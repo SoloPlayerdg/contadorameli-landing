@@ -54,6 +54,7 @@
   /* 2. Smooth scroll (respetando reduce-motion; CSS ya lo hace, esto es fallback + cierre menú) */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (ev) {
+      if (a.getAttribute('aria-disabled') === 'true') { ev.preventDefault(); return; }
       var id = a.getAttribute('href');
       if (id.length < 2) return;
       var target = document.querySelector(id);
@@ -167,18 +168,45 @@
     }
   }
 
-  /* 6. Feedback de dolores chequeables */
+  /* 6. Feedback de dolores chequeables + CTA dinámico #pain-cta */
   var pains = document.querySelectorAll('.pain input[type="checkbox"]');
   var painResult = document.getElementById('painResult');
+  var painCta = document.getElementById('pain-cta');
+  var painLabel = painCta ? painCta.querySelector('.pain-cta-label') : null;
+  function updatePainCta(n) {
+    if (!painCta || !painLabel) return;
+    painCta.setAttribute('data-count', String(n));
+    if (n === 0) {
+      painLabel.textContent = 'Marcá las que te pasen 👆';
+      painCta.classList.add('is-disabled');
+      painCta.setAttribute('aria-disabled', 'true');
+    } else if (n < 3) {
+      painLabel.textContent = 'Sí, me pasa (' + n + ') → ver cómo lo resuelvo';
+      painCta.classList.remove('is-disabled');
+      painCta.setAttribute('aria-disabled', 'false');
+    } else {
+      painLabel.textContent = 'Definitivamente es para vos (' + n + ') → ver el programa';
+      painCta.classList.remove('is-disabled');
+      painCta.setAttribute('aria-disabled', 'false');
+    }
+  }
   if (pains.length && painResult) {
     var base = 'Marcá las que te pasen 👆 y mirá el programa acá abajo.';
+    updatePainCta(0);
     pains.forEach(function (c) {
       c.addEventListener('change', function () {
         var n = document.querySelectorAll('.pain input:checked').length;
         if (n === 0) painResult.textContent = base;
         else if (n < 4) painResult.textContent = 'Marcaste ' + n + ' 👉 el curso te ordena justo eso. Mirá el programa.';
         else painResult.textContent = 'Marcaste las 4 😅 este curso es 100% para vos. Andá directo al precio.';
+        updatePainCta(n);
+        if (n > 0) track('PainQualify', { count: n });
       });
+    });
+  }
+  if (painCta) {
+    painCta.addEventListener('click', function (ev) {
+      if (painCta.getAttribute('aria-disabled') === 'true') ev.preventDefault();
     });
   }
 
@@ -218,8 +246,10 @@
   /* 8. Eventos data-track genéricos */
   document.querySelectorAll('[data-track]').forEach(function (n) {
     n.addEventListener('click', function () {
+      if (n.getAttribute('aria-disabled') === 'true') return;
       var extra = {};
       if (n.dataset.plan) extra.plan = n.dataset.plan;
+      if (n.dataset.count) extra.count = parseInt(n.dataset.count, 10);
       if (n.tagName === 'A' && n.href) extra.href = n.href;
       track(n.dataset.track, extra);
     });
