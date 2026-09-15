@@ -21,6 +21,9 @@
   <meta name="twitter:title" content="Curso de Impuestos en Mercado Libre para Contadores — Contadora Meli">
   <meta name="twitter:description" content="Asesorá vendedores de ML sin miedo: 9 módulos, PDFs, certificado y 4 meses de consultas.">
   <meta name="twitter:image" content="https://www.contadorameli.com.ar/img/curso-mercadolibre-contadores-og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
   <script type="application/ld+json">
@@ -124,13 +127,16 @@
             <li>✅ 4 meses de consultas sobre tus casos reales</li>
           </ul>
           <div class="hero-ctas">
-            <a class="btn btn-cta btn-lg" href="#precio" data-track="InitiateCheckout">Quiero dominar ML →</a>
+            <a class="btn btn-cta btn-lg" href="#precio" data-track="InitiateCheckout">Quiero dominar ML <span class="btn-ic" aria-hidden="true">→</span></a>
             <a class="btn btn-ghost btn-lg" href="#programa">Ver programa</a>
           </div>
           <p class="microcopy">⚡ Acceso inmediato · 3 cuotas sin interés</p>
         </div>
-        <aside class="hero-card reveal" aria-label="Detalle del curso">
+        <div class="hero-card-wrap reveal">
+        <aside class="hero-card" aria-label="Detalle del curso">
+          <div class="bezel bezel-tight">
           <div class="course-visual" role="img" aria-label="Vista previa del curso de impuestos en Mercado Libre">🧾📊💰</div>
+          </div>
           <h2 class="hero-card-title">Curso Impuestos en ML para Contadores</h2>
           <p class="rating" aria-label="Calificación 4.9 sobre 5 con más de 300 contadores">★ 4.9/5 · <strong>+300 contadores</strong> ya lo hicieron</p>
           <ul class="hero-card-list">
@@ -138,9 +144,10 @@
             <li>📄 PDFs + planillas de control mensual</li>
             <li>💬 Consultas 4 meses + certificado</li>
           </ul>
-          <a class="btn btn-cta btn-block" href="#precio" data-track="InitiateCheckout">Empezar ahora</a>
+          <a class="btn btn-cta btn-block" href="#precio" data-track="InitiateCheckout">Empezar ahora <span class="btn-ic" aria-hidden="true">→</span></a>
           <p class="microcopy center">Garantía 7 días · Factura C</p>
         </aside>
+        </div>
       </div>
     </section>
 
@@ -164,21 +171,31 @@
       <div class="container">
         <h2 class="section-title reveal">Cinco cosas concretas que vas a saber hacer</h2>
         <p class="section-sub reveal">Nada de teoría suelta: salís con procedimientos aplicables a tus clientes.</p>
-        <div class="grid-5">
-          <article class="card reveal"><div class="icon" aria-hidden="true">🔍</div><h3>1. Leer la info fiscal de ML/MP</h3><p>Encontrá y descargá cada reporte, factura y retención sin perder horas buscando.</p></article>
+        <div class="grid-5 bento">
+          <article class="card bento-feature reveal"><div class="icon" aria-hidden="true">🔍</div><h3>1. Leer la info fiscal de ML/MP</h3><p>Encontrá y descargá cada reporte, factura y retención sin perder horas buscando.</p></article>
           <article class="card reveal"><div class="icon" aria-hidden="true">⚖️</div><h3>2. Aplicar regímenes y alícuotas</h3><p>Dominá régimen especial vs. general de IIBB y qué alícuota corresponde en cada caso.</p></article>
           <article class="card reveal"><div class="icon" aria-hidden="true">🚨</div><h3>3. Detectar percepciones de más</h3><p>Identificá cuándo ML percibió de más y cómo recuperarlo para tu cliente.</p></article>
           <article class="card reveal"><div class="icon" aria-hidden="true">✍️</div><h3>4. Hacer reclamos que funcionan</h3><p>Modelos de reclamo ante ML, Mercado Pago y fiscos, con capturas paso a paso.</p></article>
-          <article class="card reveal"><div class="icon" aria-hidden="true">📅</div><h3>5. Control mensual en 30 minutos</h3><p>Rutina de seguimiento mensual con checklist y planilla para no olvidarte nada.</p></article>
+          <article class="card bento-yellow reveal"><div class="icon" aria-hidden="true">📅</div><h3>5. Control mensual en 30 minutos</h3><p>Rutina de seguimiento mensual con checklist y planilla para no olvidarte nada.</p></article>
         </div>
       </div>
     </section>
 
     <!-- e) PROGRAMA -->
     <section class="section" id="programa">
-      <div class="container narrow">
-        <h2 class="section-title reveal">El programa, módulo por módulo</h2>
-        <p class="section-sub reveal">9 módulos en video. Tocá cada uno para ver el detalle.</p>
+      <div class="container program-split">
+        <div class="program-sticky">
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>Programa completo</p>
+        <h2 class="section-title left reveal">El programa, módulo por módulo</h2>
+        <p class="section-sub left reveal">9 módulos en video. Tocá cada uno para ver el detalle.</p>
+        <div class="program-meta reveal">
+          <span class="meta-chip">9 módulos</span>
+          <span class="meta-chip">~9 h de video</span>
+          <span class="meta-chip">PDF en cada módulo</span>
+        </div>
+        <p class="left reveal"><a class="btn btn-cta" href="#precio" data-track="InitiateCheckout">Quiero acceder al programa completo <span class="btn-ic" aria-hidden="true">→</span></a></p>
+        </div>
+        <div>
         <div class="accordion" id="programAccordion">
           <details class="acc reveal" open>
             <summary><span class="mod">Módulo 1</span> Visualización de la info fiscal en ML <span class="tag">PDF</span> <span class="dur">~50 min</span></summary>
@@ -217,7 +234,7 @@
             <p>Rutina mensual de control, checklist para pedirle a tu cliente y cómo cobrar este servicio recurrente.</p>
           </details>
         </div>
-        <p class="center"><a class="btn btn-cta" href="#precio" data-track="InitiateCheckout">Quiero acceder al programa completo</a></p>
+        </div>
       </div>
     </section>
 
@@ -270,8 +287,8 @@
           <div><strong>9 h</strong><span>de video + PDFs</span></div>
           <div><strong>4 meses</strong><span>de consultas incluidas</span></div>
         </div>
-        <div class="grid-3">
-          <figure class="card testi reveal">
+        <div class="grid-3 testi-wall">
+          <figure class="card testi testi-feature reveal">
             <blockquote>"Recuperé $184.000 en percepciones mal aplicadas de un cliente en el primer mes. El curso se pagó solo."</blockquote>
             <figcaption><strong>Mariana López</strong><br>Contadora · CABA · Mat. C.P.C.E.C.A.B.A. T° 412 F° 88</figcaption>
             <p class="stars" aria-label="5 de 5 estrellas">★★★★★</p>
@@ -293,10 +310,12 @@
     <!-- i) PRECIO -->
     <section class="section" id="precio">
       <div class="container narrow">
+        <div class="center reveal"><p class="eyebrow"><span class="dot" aria-hidden="true"></span>Inversión</p></div>
         <h2 class="section-title reveal">Invertí menos de lo que sale <u>una sola percepción mal aplicada</u></h2>
         <p class="center reveal stack">Valor total del stack: <s>$417.800</s> <span class="pill">Curso + PDFs + planillas + 4 meses de consultas + certificado</span></p>
         <div class="price-grid">
-          <article class="card price feat reveal">
+          <div class="price-shell reveal">
+          <article class="card price price-feat">
             <p class="best">🔥 La más elegida</p>
             <h3>Transferencia · 15% OFF</h3>
             <p class="amount">$193.600 <small><s>$227.800</s></small></p>
@@ -307,9 +326,10 @@
               <li>✅ 4 meses de consultas + certificado</li>
               <li>✅ Factura C</li>
             </ul>
-            <a class="btn btn-cta btn-block btn-lg" href="https://www.contadorameli.com.ar/challenge-payment/curso-impuestos-mercado-libre-contadores" data-track="InitiateCheckout" data-plan="transferencia">Inscribirme por transferencia</a>
+            <a class="btn btn-cta btn-block btn-lg" href="https://www.contadorameli.com.ar/challenge-payment/curso-impuestos-mercado-libre-contadores" data-track="InitiateCheckout" data-plan="transferencia">Inscribirme por transferencia <span class="btn-ic" aria-hidden="true">→</span></a>
           </article>
-          <article class="card price reveal">
+          </div>
+          <article class="card price price-plain reveal">
             <h3>Mercado Pago · 3 cuotas sin interés</h3>
             <p class="amount">$227.800 <small>3 x $75.933</small></p>
             <p class="save">Sin interés con tarjeta</p>
@@ -319,7 +339,7 @@
               <li>✅ 4 meses de consultas + certificado</li>
               <li>✅ Factura C</li>
             </ul>
-            <a class="btn btn-outline btn-block btn-lg" href="https://www.contadorameli.com.ar/challenge-payment/curso-impuestos-mercado-libre-contadores" data-track="InitiateCheckout" data-plan="mercadopago">Pagar en 3 cuotas sin interés</a>
+            <a class="btn btn-outline btn-block btn-lg" href="https://www.contadorameli.com.ar/challenge-payment/curso-impuestos-mercado-libre-contadores" data-track="InitiateCheckout" data-plan="mercadopago">Pagar en 3 cuotas sin interés <span class="btn-ic" aria-hidden="true">→</span></a>
           </article>
         </div>
         <div class="guarantee-mini reveal">
@@ -331,9 +351,11 @@
     <!-- j) GARANTÍA + FAQ -->
     <section class="section section-alt" id="garantia">
       <div class="container narrow">
-        <div class="card guarantee reveal">
+        <div class="bezel reveal">
+        <div class="card guarantee bezel-inner">
           <h2>🛡️ Garantía incondicional de 7 días</h2>
           <p>Entrá, mirá los módulos, descargá los PDFs. Si en 7 días sentís que no es para vos, te devolvemos todo. Sin preguntas, sin letra chica. El riesgo es nuestro.</p>
+        </div>
         </div>
         <h2 class="section-title reveal" id="faq">Preguntas frecuentes</h2>
         <div class="accordion">
@@ -369,8 +391,9 @@
     <section class="section cta-final" id="checklist">
       <div class="container narrow">
         <h2 class="section-title reveal">Empezá hoy, aunque todavía no te inscribas</h2>
-        <p class="center reveal">Descargá gratis el <strong>checklist: qué pedirle a tu cliente de ML todos los meses</strong> y ordená tu primer caso esta semana.</p>
-        <form class="card form reveal" id="leadForm" novalidate>
+        <p class="center reveal lead-center">Descargá gratis el <strong>checklist: qué pedirle a tu cliente de ML todos los meses</strong> y ordená tu primer caso esta semana.</p>
+        <div class="form-shell reveal">
+        <form class="card form bezel-inner" id="leadForm" novalidate>
           <h3>📋 Quiero mi checklist gratis</h3>
           <div class="field">
             <label for="nombre">Nombre</label>
@@ -384,11 +407,12 @@
             <label for="whatsapp">WhatsApp</label>
             <input type="tel" id="whatsapp" name="whatsapp" placeholder="11 1234-5678" autocomplete="tel" required pattern="[0-9 +().-]{6,}">
           </div>
-          <button class="btn btn-cta btn-block btn-lg" type="submit" data-track="Lead">Enviarme el checklist →</button>
+          <button class="btn btn-cta btn-block btn-lg" type="submit" data-track="Lead">Enviarme el checklist <span class="btn-ic" aria-hidden="true">→</span></button>
           <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
           <p class="microcopy">Sin spam. Solo contenido útil para contadores.</p>
         </form>
-        <p class="center reveal cta-final-btn"><a class="btn btn-highlight btn-lg" href="#precio" data-track="InitiateCheckout">Quiero dominar ML — Inscribirme ahora</a></p>
+        </div>
+        <p class="center reveal cta-final-btn"><a class="btn btn-highlight btn-lg" href="#precio" data-track="InitiateCheckout">Quiero dominar ML — Inscribirme ahora <span class="btn-ic" aria-hidden="true">→</span></a></p>
       </div>
     </section>
   </main>

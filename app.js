@@ -97,8 +97,18 @@
     });
   }
 
-  /* 5. IntersectionObserver para animar .reveal */
+  /* 5. IntersectionObserver para animar .reveal con stagger sutil */
   var reveals = document.querySelectorAll('.reveal');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Stagger: retardo por índice dentro del mismo padre (máx 4 niveles, 70ms)
+  if (!reduceMotion) {
+    reveals.forEach(function (r) {
+      var parent = r.parentElement;
+      var siblings = parent ? parent.querySelectorAll(':scope > .reveal') : [r];
+      var idx = Array.prototype.indexOf.call(siblings, r);
+      if (idx > 0 && idx < 4) r.style.setProperty('--rv-d', (idx * 70) + 'ms');
+    });
+  }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
