@@ -146,6 +146,7 @@
             <a class="btn btn-ghost btn-lg" href="#programa">Ver programa</a>
           </div>
           <p class="microcopy">⚡ Acceso inmediato · 3 cuotas sin interés</p>
+          <a class="hero-video-link reveal" href="#video" data-track="VideoIntent"><svg class="play-ic" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M7.25 6.35v5.3l4.4-2.65-4.4-2.65Z" fill="currentColor"/></svg>Mirá el video de Meli (2 min)</a>
         </div>
         <div class="hero-card-wrap reveal">
         <aside class="hero-card" aria-label="Detalle del curso">
@@ -167,9 +168,11 @@
     </section>
 
     <!-- b2) VIDEO -->
-    <section class="section" id="video">
+    <div class="divider" aria-hidden="true" style="--div-bg:#FDFBF7;--div-fill:#FFFFFF"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section section-white" id="video">
       <div class="container program-split">
         <div>
+          <span class="gold-rule" aria-hidden="true"></span>
           <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>MIRÁ EL VIDEO</p>
           <h2 class="section-title left reveal">Mirá por qué creé este curso</h2>
           <ul class="hero-bullets reveal">
@@ -190,6 +193,7 @@
     </section>
 
     <!-- c) DOLORES -->
+    <div class="divider" aria-hidden="true" style="--div-bg:#FFFFFF;--div-fill:#FDFBF7"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
     <section class="section" id="dolores">
       <div class="container">
         <h2 class="section-title reveal">¿Te pasa alguna de estas?</h2>
@@ -205,6 +209,7 @@
     </section>
 
     <!-- d) CINCO COSAS CONCRETAS -->
+    <div class="divider" aria-hidden="true" style="--div-bg:#FDFBF7;--div-fill:#F6F1E6"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
     <section class="section section-alt" id="vas-a-aprender">
       <div class="container">
         <h2 class="section-title reveal">Cinco cosas concretas que vas a saber hacer</h2>
@@ -220,9 +225,11 @@
     </section>
 
     <!-- e) PROGRAMA -->
-    <section class="section" id="programa">
+    <div class="divider" aria-hidden="true" style="--div-bg:#F6F1E6;--div-fill:#FFFFFF"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section section-white" id="programa">
       <div class="container program-split">
         <div class="program-sticky">
+        <span class="gold-rule" aria-hidden="true"></span>
         <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>Programa completo</p>
         <h2 class="section-title left reveal">El programa, módulo por módulo</h2>
         <p class="section-sub left reveal">9 módulos en video. Tocá cada uno para ver el detalle.</p>
@@ -277,7 +284,8 @@
     </section>
 
     <!-- f) CÓMO FUNCIONA -->
-    <section class="section section-alt" id="como-funciona">
+    <div class="divider" aria-hidden="true" style="--div-bg:#FFFFFF;--div-fill:#FFF9DB"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section section-tint" id="como-funciona">
       <div class="container">
         <h2 class="section-title reveal">Cómo funciona</h2>
         <ol class="steps">
@@ -290,6 +298,7 @@
     </section>
 
     <!-- g) ES / NO ES -->
+    <div class="divider" aria-hidden="true" style="--div-bg:#FFF9DB;--div-fill:#FDFBF7"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
     <section class="section" id="para-quien">
       <div class="container">
         <h2 class="section-title reveal">¿Es para vos?</h2>
@@ -315,15 +324,17 @@
       </div>
     </section>
 
+    <!-- Banda marquee sutil programa → testimonios -->
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>9 módulos en video&nbsp;&nbsp;•&nbsp;&nbsp;Casos reales&nbsp;&nbsp;•&nbsp;&nbsp;Actualización normativa&nbsp;&nbsp;•&nbsp;&nbsp;Certificado&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>9 módulos en video&nbsp;&nbsp;•&nbsp;&nbsp;Casos reales&nbsp;&nbsp;•&nbsp;&nbsp;Actualización normativa&nbsp;&nbsp;•&nbsp;&nbsp;Certificado&nbsp;&nbsp;•&nbsp;&nbsp;</span></div></div>
     <!-- h) PRUEBA SOCIAL -->
     <section class="section section-alt" id="testimonios">
       <div class="container">
         <h2 class="section-title reveal">Lo que dicen quienes ya lo hicieron</h2>
         <div class="metrics reveal">
-          <div><strong>★ 4.9/5</strong><span>satisfacción promedio</span></div>
-          <div><strong>+300</strong><span>contadores formados</span></div>
-          <div><strong>9 h</strong><span>de video + PDFs</span></div>
-          <div><strong>4 meses</strong><span>de consultas incluidas</span></div>
+          <div><strong data-count="4.9" data-decimals="1" data-prefix="★ " data-suffix="/5">★ 4.9/5</strong><span>satisfacción promedio</span></div>
+          <div><strong data-count="300" data-decimals="0" data-prefix="+" data-suffix="">+300</strong><span>contadores formados</span></div>
+          <div><strong data-count="9" data-decimals="0" data-prefix="" data-suffix=" h">9 h</strong><span>de video + PDFs</span></div>
+          <div><strong data-count="4" data-decimals="0" data-prefix="" data-suffix=" meses">4 meses</strong><span>de consultas incluidas</span></div>
         </div>
         <div class="grid-3 testi-wall">
           <figure class="card testi testi-feature reveal">
@@ -346,9 +357,10 @@
     </section>
 
     <!-- i) PRECIO -->
-    <section class="section" id="precio">
+    <div class="divider divider-navy" aria-hidden="true" style="--div-bg:#F6F1E6;--div-fill:#2D3277"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section section-navy" id="precio">
       <div class="container narrow">
-        <div class="center reveal"><p class="eyebrow"><span class="dot" aria-hidden="true"></span>Inversión</p></div>
+        <div class="center reveal"><span class="gold-rule gold-center" aria-hidden="true"></span><p class="eyebrow"><span class="dot" aria-hidden="true"></span>Inversión</p></div>
         <h2 class="section-title reveal">Invertí menos de lo que sale <u>una sola percepción mal aplicada</u></h2>
         <p class="center reveal stack">Valor total del stack: <s>$417.800</s> <span class="pill">Curso + PDFs + planillas + 4 meses de consultas + certificado</span></p>
         <div class="price-grid">
@@ -387,7 +399,8 @@
     </section>
 
     <!-- j) GARANTÍA + FAQ -->
-    <section class="section section-alt" id="garantia">
+    <div class="divider" aria-hidden="true" style="--div-bg:#2D3277;--div-fill:#FDFBF7"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section" id="garantia">
       <div class="container narrow">
         <div class="bezel reveal">
         <div class="card guarantee bezel-inner">
@@ -410,7 +423,8 @@
     </section>
 
     <!-- k) BIO -->
-    <section class="section" id="bio">
+    <div class="divider" aria-hidden="true" style="--div-bg:#FDFBF7;--div-fill:#FFFFFF"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
+    <section class="section section-white" id="bio">
       <div class="container bio-grid">
         <div class="bio-photo reveal" role="img" aria-label="Foto de la Contadora Meli">👩‍💼</div>
         <div class="reveal">
@@ -437,6 +451,7 @@
     </section>
 
     <!-- l) CTA FINAL + LEAD MAGNET -->
+    <div class="divider" aria-hidden="true" style="--div-bg:#FFFFFF;--div-fill:#F6F1E6"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false"><path d="M0,0 C360,44 1080,44 1440,0 L1440,48 L0,48 Z"/></svg></div>
     <section class="section cta-final" id="checklist">
       <div class="container narrow">
         <h2 class="section-title reveal">Empezá hoy, aunque todavía no te inscribas</h2>

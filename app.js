@@ -97,8 +97,9 @@
     });
   }
 
-  /* 5. IntersectionObserver para animar .reveal con stagger sutil */
+  /* 5. IntersectionObserver para animar .reveal con stagger sutil + hairline dorada */
   var reveals = document.querySelectorAll('.reveal');
+  var goldRules = document.querySelectorAll('.gold-rule');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Stagger: retardo por índice dentro del mismo padre (máx 4 niveles, 70ms)
   if (!reduceMotion) {
@@ -119,8 +120,51 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(function (r) { io.observe(r); });
+    goldRules.forEach(function (g) { io.observe(g); });
   } else {
     reveals.forEach(function (r) { r.classList.add('visible'); });
+    goldRules.forEach(function (g) { g.classList.add('visible'); });
+  }
+
+  /* 5b. Contadores animados en métricas (una sola vez, respeta reduced-motion) */
+  var counters = document.querySelectorAll('.metrics strong[data-count]');
+  function renderCount(n) {
+    var target = parseFloat(n.dataset.count);
+    var dec = parseInt(n.dataset.decimals || '0', 10);
+    var pre = n.dataset.prefix || '';
+    var suf = n.dataset.suffix || '';
+    return function (v) { n.textContent = pre + v.toFixed(dec) + suf; };
+  }
+  function animateCount(n) {
+    var target = parseFloat(n.dataset.count);
+    var draw = renderCount(n);
+    if (reduceMotion) { draw(target); return; }
+    var dur = 1200;
+    var start = null;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      draw(target * eased);
+      if (p < 1) requestAnimationFrame(frame);
+      else draw(target);
+    }
+    requestAnimationFrame(frame);
+  }
+  if (counters.length) {
+    if ('IntersectionObserver' in window) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            animateCount(en.target);
+            cio.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (c) { cio.observe(c); });
+    } else {
+      counters.forEach(animateCount);
+    }
   }
 
   /* 6. Feedback de dolores chequeables */

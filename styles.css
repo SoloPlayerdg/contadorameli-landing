@@ -6,6 +6,8 @@
   --bg: #FDFBF7;
   --bg-alt: #F6F1E6;
   --bg-soft: #FFFFFF;
+  --gold: #C9A227;
+  --tint: #FFF9DB;
   --ink: #20234D;
   --ink-soft: #3A3E6B;
   --muted: #6B6884;
@@ -45,6 +47,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--ink);
@@ -353,6 +356,86 @@ p { max-width: 65ch; }
 /* Video */
 .video-frame { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: calc(var(--radius-lg) - .45rem); background: var(--navy-deep); }
 
+/* Hero video link terciario */
+.hero-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1rem;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: transform .45s var(--ease), color .45s var(--ease);
+}
+.hero-video-link .play-ic { flex-shrink: 0; transition: transform .45s var(--ease); }
+.hero-video-link:hover { color: var(--navy-deep); transform: translateX(3px); }
+.hero-video-link:hover .play-ic { transform: scale(1.12); }
+
+/* Transiciones elegantes entre secciones */
+.section-white { background: #FFFFFF; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.section-tint { background: var(--tint); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.section-navy { background: var(--navy); color: #EDEEFF; border-top: 1px solid var(--navy-deep); border-bottom: 1px solid var(--navy-deep); }
+.section-navy .section-title { color: #FFFFFF; }
+.section-navy .stack { color: #C9CBE8; }
+.section-navy .stack s { color: #FFD166; }
+.section-navy .pill { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .22); color: #FFFFFF; }
+.section-navy .save { color: var(--cta-dark); }
+
+/* Separadores SVG */
+.divider { line-height: 0; background: var(--div-bg, transparent); overflow: hidden; }
+.divider svg { display: block; width: 100%; height: 36px; }
+.divider svg path { fill: var(--div-fill, #FFFFFF); }
+
+/* Hairline dorada firma */
+.gold-rule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 0 0 .9rem;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s var(--ease);
+  transition-delay: var(--rv-d, 0ms);
+  will-change: transform;
+}
+.gold-rule.visible { transform: scaleX(1); }
+.gold-center { margin-left: auto; margin-right: auto; transform-origin: center; }
+
+/* Banda marquee sutil */
+.marquee {
+  background: var(--yellow);
+  border-top: 1px solid var(--yellow-line);
+  border-bottom: 1px solid var(--yellow-line);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .65rem 0;
+}
+.marquee-track {
+  display: inline-flex;
+  will-change: transform;
+  animation: marquee-slide 28s linear infinite;
+}
+.marquee-track span {
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--navy-deep);
+  padding-right: .5rem;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Métricas con tabular-nums para count-up */
+.metrics strong { font-variant-numeric: tabular-nums; }
+
 /* CTA final claro */
 .cta-final { background: var(--bg-alt); border-top: 1px solid var(--line); color: var(--ink); }
 .cta-final .section-title { color: var(--navy-deep); }
@@ -388,6 +471,8 @@ p { max-width: 65ch; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+  .gold-rule { transform: scaleX(1) !important; transition: none !important; }
+  .marquee-track { animation: none !important; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
@@ -424,6 +509,9 @@ p { max-width: 65ch; }
 
 /* Collapse agresivo <768px */
 @media (max-width: 767px) {
+  .divider svg { height: 24px; }
+  .marquee-track span { font-size: .8rem; }
+  .gold-rule { width: 48px; }
   .section { padding: 4rem 0; }
   .container, .container.narrow { width: min(100% - 2rem, 640px); }
   .hero { padding: 2rem 0 3.5rem; }
