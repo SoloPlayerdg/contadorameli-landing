@@ -348,6 +348,10 @@ p { max-width: 65ch; }
 .bio-photo { font-size: 4.6rem; background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; min-height: 260px; }
 .bio-list { list-style: none; padding: 0; display: grid; gap: .5rem; }
 .bio-list a { font-weight: 600; }
+.bio-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.2rem; }
+
+/* Video */
+.video-frame { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: calc(var(--radius-lg) - .45rem); background: var(--navy-deep); }
 
 /* CTA final claro */
 .cta-final { background: var(--bg-alt); border-top: 1px solid var(--line); color: var(--ink); }
